@@ -8,8 +8,15 @@ The program lights up LEDs to follow the hour and minute hands of the clock. Thi
 **This project is in early development - expect bugs and missing features.**
 
 ## Installation
-Make sure you have Node.js v16 and NPM installed, then:
+You must have have NPM and Node.js installed (v16 recommended).
+
 1. Clone or download this repository.
 2. Run `npm ci` in the directory to install all of the dependencies.
 3. Run `npm run compile` to compile the source code.
-4. Run `npm run start` to run the program.
+4. Make a copy of `config.example.json` and rename it to `config.json`.
+5. Open `config.json` and change the settings to match your setup.
+6. Run `npm run start` to run the program.
+
+After completing these steps, the program should begin interfacing with your WLED device(s).
+
+**Power must be activated on the WLED web interface for the LEDs to turn on.**
