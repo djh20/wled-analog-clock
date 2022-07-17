@@ -14,5 +14,5 @@ export default class Config {
 
 interface ConfigData {
   devices: Device[];
-  timeOffset?: number;
+  effectColors: number[][];
 }
