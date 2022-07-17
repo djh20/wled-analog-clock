@@ -20,7 +20,7 @@ async function init() {
   console.log("\n- Scheduling job...");
 
   const job = new CronJob(
-    "*/15 * * * * *",
+    "*/10 * * * * *",
     updateAll,
     null,
     true
