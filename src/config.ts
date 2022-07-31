@@ -1,5 +1,5 @@
-import Device from "./device";
 import { readFile } from "node:fs/promises";
+import { DeviceDefinition } from "./device";
 
 export default class Config {
   public data?: ConfigData;
@@ -13,6 +13,6 @@ export default class Config {
 }
 
 interface ConfigData {
-  devices: Device[];
+  devices: DeviceDefinition[];
   effectColors: number[][];
 }

@@ -1,4 +1,21 @@
-export default interface Device {
+import { Client, Packet } from "e131";
+
+export default class Device {
+  public definition: DeviceDefinition;
+  public client: Client;
+  public packet: Packet;
+  public playingEffect: boolean = false;
+
+  constructor(definition: DeviceDefinition) {
+    this.definition = definition;
+
+    this.client = new Client(this.definition.ip);
+    this.packet = this.client.createPacket(this.definition.ledCount * 3);
+    this.packet.setUniverse(1);
+  }
+}
+
+export interface DeviceDefinition {
   ip: string;
 
   /**
@@ -9,8 +26,7 @@ export default interface Device {
    */
   timeOffset?: number;
 
-  // TODO: Move to separate class for device instance.
-  lastDate?: Date;
+  ledCount: number;
 }
 
 /**
