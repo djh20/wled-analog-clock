@@ -29,7 +29,7 @@ async function init() {
 
   console.log("  Success.");
 
-  setInterval(updateAll, 100);
+  setInterval(updateAll, 1000);
   await updateAll();
 }
 
