@@ -1,6 +1,5 @@
 import Config from "./config";
 import axios from "axios";
-import { CronJob } from "cron";
 import { resolve as resolvePath } from "node:path";
 
 import Device, { DeviceInfo, DeviceState, LightSource, Segment } from "./device";
@@ -30,21 +29,7 @@ async function init() {
 
   console.log("  Success.");
 
-  console.log("\n- Scheduling update job...");
-
-  // Create a cron job to update all devices every minute.
-  /*
-  const job = new CronJob(
-    "* * * * * *",
-    updateAll,
-    null,
-    true
-  );
-  */
-  
   setInterval(updateAll, 100);
-  console.log("  Success.");
-
   await updateAll();
 }
 
